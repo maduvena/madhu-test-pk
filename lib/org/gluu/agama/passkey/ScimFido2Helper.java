@@ -35,7 +35,7 @@ public class ScimFido2Helper extends ScimWSBase {
             request.setQuery(joiner.toString());
 
             String response = sendRequest(request, true, true).getContentAsJSONObject().toJSONString();
-            log.debug("Response scim fido2 devices: {}", response);
+            log.info("Response scim fido2 devices: {}", response);
             JSONObject resObject = new JSONObject(response);
             int count = resObject.getInt("totalResults");
             List<Map<String, String>> mapList = new ArrayList<>();
